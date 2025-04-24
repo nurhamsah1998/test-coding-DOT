@@ -6,6 +6,8 @@
 
     npm run test-nurhamsah
 
+Setelah menjalankan perintah tersebut, harusnya aplikasi sudah siap digunakan dengan alamat url : http://localhost:5173/
+
 ## That's it! Enjoy ☕☕☕
 
 Demo Preview ? [CLICK HERE](https://test-coding-dot.vercel.app/)
