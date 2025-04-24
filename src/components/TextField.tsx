@@ -1,7 +1,7 @@
 const TextField: React.FunctionComponent<
   React.InputHTMLAttributes<HTMLInputElement> & {
     isLoading?: boolean;
-    ref: React.Ref<HTMLInputElement>;
+    ref?: React.Ref<HTMLInputElement>;
     sx?: React.CSSProperties;
   }
 > = ({ sx, ref, isLoading, ...props }) => {

@@ -3,6 +3,7 @@ import Cookies from "universal-cookie";
 import { PropTodo } from ".";
 import CardTodo from "../../../components/CardTodo";
 import { useMemo } from "react";
+import { PropsUsers } from "../../Login";
 
 function RightSection({
   todo,
@@ -12,6 +13,7 @@ function RightSection({
   setTodo: React.Dispatch<React.SetStateAction<PropTodo[]>>;
 }) {
   const cookie = new Cookies();
+  const token: PropsUsers | undefined = cookie.get("token");
   const handleChangeCheckBox = (checked: boolean, selected: PropTodo) => {
     setTodo((prev: PropTodo[]) => {
       for (let index = 0; index < prev.length; index++) {
@@ -36,20 +38,22 @@ function RightSection({
     }
   };
   const dataRebuild = useMemo(() => {
-    const result = todo.map((item) => item);
+    const result = todo.filter((item) => item.email === token?.email);
     return result.reverse();
-  }, [todo]);
+  }, [todo, token]);
+
   return (
     <div
       style={{
         border: "#000 solid 2px",
         flex: 2,
-        padding: "10px",
+        padding: "20px",
         display: "flex",
         flexDirection: "column",
         gap: "10px",
         height: "calc(100dvh - 160px)",
         overflowY: "auto",
+        borderRadius: "10px",
       }}
     >
       {dataRebuild?.length !== 0 ? (

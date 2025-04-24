@@ -1,0 +1,40 @@
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.nav-button-parent {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  color: black;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  rotate: 90deg;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.nav-mobile {
+  display: none;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s all;
+  z-index: 9;
+  overflow: hidden;
+}
+@media only screen and (max-width: 600px) {
+  .nav-container {
+    display: none;
+  }
+  .nav-button-parent {
+    display: flex;
+  }
+  .nav-mobile {
+    display: block;
+  }
+}

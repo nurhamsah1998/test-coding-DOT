@@ -49,7 +49,7 @@ function LeftSection({
           </span>
         )}
       </form>
-      <div style={{ marginTop: "20px" }}>
+      <div className="container-form-ads">
         <Ads />
       </div>
     </div>

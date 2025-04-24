@@ -1,18 +1,21 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef, useState } from "react";
 import Cookies from "universal-cookie";
 import LeftSection from "./LeftSection";
 import RightSection from "./RightSection";
+import { PropsUsers } from "../../Login";
+import "./todo.style.css";
 
 export type PropTodo = {
   name?: string;
   id?: number;
   isDone?: false;
   createdAt: string;
+  email: string | undefined;
 };
 function Todo() {
   const cookie = new Cookies();
   const todoCookies = cookie.get("todo");
+  const token: PropsUsers | undefined = cookie.get("token");
   const [todo, setTodo] = useState<PropTodo[]>(todoCookies ?? []);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const refInput = useRef<Pick<HTMLInputElement, "value">>({ value: "" });
@@ -20,14 +23,14 @@ function Todo() {
     e.preventDefault();
     setIsLoading(true);
     try {
+      if (!refInput.current.value) {
+        return alert(`Input is required!!`);
+      }
       await new Promise((resolved) => {
         setTimeout(() => {
           resolved("success");
         }, 2000);
       });
-      if (!refInput.current.value) {
-        return alert(`Input is required!!`);
-      }
       const clone = [...todo];
       let isSameName = false;
       for (let index = 0; index < clone.length; index++) {
@@ -46,6 +49,7 @@ function Todo() {
         id: new Date().getTime(),
         isDone: false,
         createdAt: new Date().toLocaleString(),
+        email: token?.email,
       });
       setTodo(clone);
       refInput.current.value = "";
@@ -58,12 +62,7 @@ function Todo() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: "20px",
-      }}
-    >
+    <div className="todo-container">
       <LeftSection
         isLoading={isLoading}
         refInput={refInput}

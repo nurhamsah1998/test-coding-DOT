@@ -1,0 +1,17 @@
+.todo-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.container-form-ads {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .todo-container {
+    flex-direction: column;
+  }
+  .container-form-ads {
+    display: none;
+  }
+}
