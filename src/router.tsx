@@ -2,11 +2,11 @@ import { Navigate, useRoutes } from "react-router-dom";
 import LoginPage from "./pages/login.page";
 import NotFound from "./pages/not-found";
 import Drawer from "./components/Drawer";
-import ProductDetail from "./view/authenticated/ProductDetail";
 import RegisterPage from "./pages/register.page";
 import TodolistPage from "./pages/todo.page";
-import HomeProduct from "./view/authenticated/homeProduct";
 import CartPage from "./pages/cart.page";
+import ProductDetailPage from "./pages/product-detail.page";
+import HomeProductPage from "./pages/home-product.page";
 
 function Router() {
   return useRoutes([
@@ -15,11 +15,11 @@ function Router() {
       path: "/",
       children: [
         {
-          element: <HomeProduct />,
+          element: <HomeProductPage />,
           index: true,
         },
         {
-          element: <ProductDetail />,
+          element: <ProductDetailPage />,
           path: "/product/:id",
         },
         {

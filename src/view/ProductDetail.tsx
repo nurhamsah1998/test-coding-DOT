@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useParams } from "react-router-dom";
-import NotFound from "../../pages/not-found";
+import NotFound from "../pages/not-found";
 import Cookies from "universal-cookie";
-import { PropTodo } from "./todo";
-import Button from "../../components/Button";
-import "./todo.style.css";
-import { useCart } from "../../hooks/useCart";
-import { PropsUsers } from "../Login";
+import { PropTodo } from "./authenticated/todo";
+import Button from "../components/Button";
+import { useCart } from "../hooks/useCart";
+import { PropsUsers } from "./Login";
+import "./detail-product.style.css";
 
 function ProductDetail() {
   const { id } = useParams();
@@ -68,7 +68,7 @@ function ProductDetail() {
               lineHeight: "14px",
             }}
           >
-            {productSelected.name}
+            {productSelected.id}
           </h1>
         </div>
         <div

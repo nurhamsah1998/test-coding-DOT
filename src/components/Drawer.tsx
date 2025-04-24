@@ -34,7 +34,7 @@ function Drawer() {
         }}
       >
         <h4>
-          {token?.email && "Hello, "}
+          {token?.email ? "Hello, " : "Test Code DOT"}
           {token?.name}
         </h4>
         <div
