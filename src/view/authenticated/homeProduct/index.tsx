@@ -9,6 +9,7 @@ function HomeProduct() {
   const [product] = useState<PropTodo[]>(todoCookies ?? []);
   return (
     <div>
+      <title>Home</title>
       <div
         style={{
           display: "flex",

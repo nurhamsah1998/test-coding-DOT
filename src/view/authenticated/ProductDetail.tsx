@@ -27,6 +27,7 @@ function ProductDetail() {
   if (!productSelected) return <NotFound />;
   return (
     <div className="container-detail-product">
+      <title>{productSelected?.name || "-s"}</title>
       <div
         style={{
           flex: 1,

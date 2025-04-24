@@ -8,6 +8,7 @@ function TodolistPage() {
   if (!token) return <Navigate to="/login" replace />;
   return (
     <div>
+      <title>Todo</title>
       <Todo />
     </div>
   );

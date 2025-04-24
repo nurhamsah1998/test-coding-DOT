@@ -8,6 +8,7 @@ function CartPage() {
   if (!token) return <Navigate to="/login" replace />;
   return (
     <div>
+      <title>Cart</title>
       <CartView />
     </div>
   );

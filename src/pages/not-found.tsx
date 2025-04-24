@@ -14,6 +14,7 @@ function NotFound() {
         alignItems: "center",
       }}
     >
+      <title>Not Found</title>
       <h1>NotFound</h1>
       <Button onClick={() => nav("/")}>Go Back</Button>
     </div>

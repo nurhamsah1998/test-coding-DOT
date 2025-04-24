@@ -10,7 +10,6 @@ function CardTodo({
   onChangeCheckbox: (prop: React.ChangeEvent<HTMLInputElement>) => void;
   handleDelete: () => void;
 }) {
-  console.log("RE_RENDER");
   return (
     <div
       style={{
