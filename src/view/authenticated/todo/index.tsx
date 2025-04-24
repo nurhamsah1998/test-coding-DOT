@@ -9,8 +9,8 @@ export type PropTodo = {
   name?: string;
   id?: number;
   isDone?: false;
-  createdAt: string;
-  email: string | undefined;
+  createdAt?: string;
+  email?: string | undefined;
 };
 function Todo() {
   const cookie = new Cookies();

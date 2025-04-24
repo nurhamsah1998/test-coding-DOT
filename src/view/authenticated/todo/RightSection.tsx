@@ -74,6 +74,7 @@ function RightSection({
             justifyContent: "center",
             alignItems: "center",
             height: "100%",
+            color: "gray",
           }}
         >
           <h1>Horrey! you dont have any todo</h1>

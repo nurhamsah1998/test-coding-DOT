@@ -1,0 +1,12 @@
+.container-detail-product {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .container-detail-product {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

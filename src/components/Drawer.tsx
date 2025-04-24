@@ -16,9 +16,11 @@ function Drawer() {
     const isDeleteConfirm = confirm(`Are you sure want to logout ?`);
     if (isDeleteConfirm) {
       cookie.remove("token", { path: "/" });
+      setShow(false);
       nav("/");
     }
   };
+
   return (
     <div>
       <nav
@@ -53,6 +55,17 @@ function Drawer() {
             }}
           >
             <NavLink afterNavigate={() => setShow(!show)} />
+            {token?.email && (
+              <Button
+                onClick={handleLogOut}
+                sx={{
+                  marginTop: "30px",
+                }}
+                colorTheme="error"
+              >
+                Logout
+              </Button>
+            )}
           </div>
         </div>
         <div className="nav-container">
